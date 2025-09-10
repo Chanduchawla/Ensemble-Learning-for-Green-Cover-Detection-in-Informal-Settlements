@@ -32,8 +32,20 @@ Install dependencies using:
 ```bash
 pip install -r requirements.txt
 
-
 ```
+tensorflow>=2.10.0
+numpy>=1.23.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+scikit-learn>=1.2.0
+opencv-python>=4.6.0
+Pillow>=9.3.0
+albumentations>=1.3.0
+```
+
+---
+
 ## 4. Usage Instructions
 
 1. **Clone the Repository.**
@@ -117,6 +129,7 @@ If you use this code or research in your work, please cite:
 For queries, collaborations, or clarifications, please reach out:
 
 👤 **Chevala Chandu**
+📧 Email: [chanduchawla3820@gmail.com](mailto:chanduchawla3820@gmail.com)
 📧 Via [GitHub Issues](https://github.com/Chanduchawla) or Profile
 
 ---
