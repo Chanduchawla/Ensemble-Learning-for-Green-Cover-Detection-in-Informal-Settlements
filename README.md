@@ -1,113 +1,108 @@
-Ensemble Deep Learning for Green Cover Detection in Informal Settlements
-<div align="center">
+Ensemble Learning for Enhanced Green Cover and Open Space Classification in Informal Settlements
+1. Description
+This repository contains the implementation of the research work entitled:
 
-</div>
+“Ensemble Learning for Enhanced Green Cover and Open Space Classification in Informal Settlements.”
 
-This repository contains the official implementation for the paper: "Ensemble Deep Learning for Enhanced Green Cover and Open Space Classification in Informal Settlements." We propose a robust ensemble framework that intelligently combines multiple U-Net based architectures to achieve state-of-the-art semantic segmentation of satellite imagery.
+The base implementation uses a diverse set of seven U-Net based architectures for semantic segmentation.
 
-🌟 Overview
-Accurately mapping green cover and open spaces in informal settlements is crucial for sustainable urban planning, environmental monitoring, and improving quality of life. However, the heterogeneous and complex nature of these areas poses significant challenges for standard computer vision models.
+To improve accuracy and robustness, a stacking ensemble framework with a neural network meta-learner is used to intelligently fuse the predictions from the base models.
 
-This project tackles this challenge by leveraging the power of ensemble learning. Instead of relying on a single model, we train a diverse "team" of seven specialized U-Net variants and fuse their predictions using a sophisticated stacking meta-learner. This approach mitigates the weaknesses of individual models and produces a final segmentation map that is significantly more accurate and robust.
+This ensemble framework has been tested on:
 
-🏗️ Proposed Framework
-Our methodology is built on a two-level learning architecture. Level-0 consists of seven parallel base models for initial prediction. Level-1 employs an ensemble learning framework, featuring a trainable meta-learner, to produce the final, high-accuracy classification.
+A custom high-resolution satellite imagery dataset of informal settlements from South America, Africa, and Asia.
 
-<p align="center">
-<img src="assets/framework_diagram.jpg" alt="Ensemble Framework Diagram" width="800"/>
-</p>
+The task is to classify pixels into four categories: (1) green cover, (2) open spaces, (3) built structures, and (4) other surfaces.
 
-🚀 Key Features
-Diverse Model Portfolio: Implements 7 different U-Net based architectures, including standard U-Net, Attention U-Net, U-Net++, and variants with VGG/ResNet backbones.
+2. System Requirements
+Operating System: Windows 10/11, Ubuntu 20.04+, or macOS 12+
 
-Advanced Ensemble Strategy: Employs a trainable neural network (meta-learner) to intelligently combine predictions, outperforming simpler methods like voting or averaging.
+Python: 3.9 – 3.11
 
-State-of-the-Art Performance: Achieves 94.2% accuracy on the task, a 3-7% improvement over individual models.
+GPU (Recommended): NVIDIA GPU with CUDA 11.6+ for training.
 
-High-Impact Application: Provides a powerful tool for urban planners and environmental scientists to accurately map green infrastructure in challenging environments.
+RAM: Minimum 8 GB (16 GB recommended for training).
 
-Comprehensive Evaluation: Systematically compares four different ensemble strategies: Hard Voting, Soft Voting, Weighted Averaging, and Stacking.
+Storage: At least 15 GB free (for datasets and model checkpoints).
 
-📊 Results Showcase
-Our ensemble approach consistently outperforms all individual models and simpler fusion techniques across all standard evaluation metrics.
-
-<p align="center">
-<img src="assets/results_f1_iou.png" alt="F1-Score and IoU Results" width="700"/>
-<em><br><b>Figure 1:</b> Comparison of core segmentation metrics. Our ensemble (highlighted) shows superior performance in F1-Score and IoU.</em>
-</p>
-<br>
-<p align="center">
-<img src="assets/results_acc_prec_rec.png" alt="Accuracy, Precision, and Recall Results" width="700"/>
-<em><br><b>Figure 2:</b> Comparison of classification metrics. The ensemble achieves the highest scores in Accuracy, Precision, and Recall.</em>
-</p>
-
-🛠️ Tech Stack & Models
-This project is built using Python and the TensorFlow/Keras deep learning framework.
-
-Frameworks: TensorFlow, Keras
-
-Libraries: NumPy, Pandas, Scikit-learn, Matplotlib, OpenCV
-
-Base Models:
-
-Standard U-Net
-
-Attention U-Net
-
-U-Net++
-
-ResNet-UNet
-
-VGG16-UNet
-
-VGG19-UNet
-
-Modified U-Net (with SE Blocks & ASPP)
-
-⚙️ Setup and Usage
-To replicate the experiments, follow these steps:
-
-1. Clone the Repository
-
-git clone [https://github.com/Chanduchawla/Ensemble-Learning-for-Green-Cover-Detection-in-Informal-Settlements.git](https://github.com/Chanduchawla/Ensemble-Learning-for-Green-Cover-Detection-in-Informal-Settlements.git)
-cd Ensemble-Learning-for-Green-Cover-Detection-in-Informal-Settlements
-
-2. Create a Virtual Environment (Recommended)
-
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-
-3. Install Dependencies
-Make sure you have a requirements.txt file in your repository.
+3. Required Libraries
+Install dependencies using:
 
 pip install -r requirements.txt
 
-4. Data Setup
+Contents of requirements.txt:
 
-Download the dataset and organize it into the following directory structure:
+tensorflow>=2.10.0
+numpy>=1.23.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+scikit-learn>=1.2.0
+opencv-python>=4.6.0
+Pillow>=9.3.0
+albumentations>=1.3.0
 
-data/
-├── train_images/
-├── train_masks/
-├── val_images/
-├── val_masks/
-├── test_images/
-└── test_masks/
+4. Usage Instructions
+Clone or download the project.
 
-5. Run the Notebook
+git clone [https://github.com/Chanduchawla/Ensemble-Learning-for-Green-Cover-Detection-in-Informal-Settlements](https://github.com/Chanduchawla/Ensemble-Learning-for-Green-Cover-Detection-in-Informal-Settlements)
 
-Launch Jupyter Notebook or JupyterLab:
+Set up the dataset.
+Organize your dataset into the following structure:
 
-jupyter notebook
+dataset/
+  ├── train_images/
+  │   └── train/
+  ├── train_masks/
+  │   └── train/
+  ├── val_images/
+  │   └── val/
+  ├── val_masks/
+  │   └── val/
+  ├── test_images/
+  │   └── test/
+  └── test_masks/
+      └── test/
 
-Open the ensamble-learning-98295d.ipynb notebook and execute the cells.
+Train Base Models and Evaluate Ensembles.
+The entire workflow is contained within the main Jupyter notebook. This includes training all seven base models, evaluating them, and then applying the four different ensemble strategies.
 
-📄 Citing This Work
-If you find this work useful in your research, please consider citing the original paper:
+# Launch Jupyter and run the cells in the following notebook:
+ensamble-learning-98295d.ipynb
 
-@inproceedings{your_conference_shortname_2025,
-  author    = {Author A and Author B and Author C},
-  title     = {Ensemble Deep Learning for Enhanced Green Cover and Open Space Classification in Informal Settlements},
-  booktitle = {Conference Name},
-  year      = {2025},
-}
+The notebook will train:
+
+Standard U-Net, Attention U-Net, U-Net++, ResNet-UNet, VGG16-UNet, VGG19-UNet, and a Modified U-Net.
+
+Ensemble Inference.
+The notebook will automatically perform inference using four different ensemble methods after the base models are trained:
+
+Hard Voting (Majority Voting)
+
+Soft Voting (Probability Averaging)
+
+Weighted Averaging
+
+Stacking with a Meta-Learner (Our Proposed Method)
+
+Output.
+The program outputs:
+
+Saved model weights (.keras files) for each base model.
+
+Performance metrics for all models and ensembles (Accuracy, F1-Score, IoU, Precision, Recall).
+
+Training history plots for each base model.
+
+Visualizations of the final predicted segmentation masks on test images.
+
+5. Reference
+If you use this code or research in your work, please cite:
+
+Chanduchawla
+Ensemble Learning for Enhanced Green Cover and Open Space Classification in Informal Settlements.
+
+6. Contact
+For queries, collaborations, or clarifications, please contact:
+Chanduchawla
+📧 Via GitHub Issues or Profile
