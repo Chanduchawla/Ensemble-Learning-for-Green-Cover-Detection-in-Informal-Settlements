@@ -31,6 +31,9 @@ Install dependencies using:
 
 ```bash
 pip install -r requirements.txt
+````
+
+Contents of `requirements.txt`:
 
 ```
 tensorflow>=2.10.0
@@ -42,7 +45,9 @@ scikit-learn>=1.2.0
 opencv-python>=4.6.0
 Pillow>=9.3.0
 albumentations>=1.3.0
+
 ```
+
 
 ---
 
