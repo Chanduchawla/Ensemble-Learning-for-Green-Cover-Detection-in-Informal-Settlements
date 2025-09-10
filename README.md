@@ -83,7 +83,7 @@ albumentations>=1.3.0
    The entire workflow is contained in the Jupyter notebook:
 
    ```bash
-   jupyter notebook ensamble-learning-98295d.ipynb
+   jupyter notebook chandu-conference-paper.ipynb
    ```
 
    This notebook trains the following models:
