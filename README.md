@@ -100,12 +100,13 @@ You have two options:
 
    ```bash
    jupyter nbconvert --to notebook chandu-conference-paper1.py --output chandu-conference-paper1.ipynb
+   ```
 #### 1. Run as a Python Script
 If you just want to execute the code directly, run:
 
 ```bash
 python chandu-conference-paper1.py
-
+```
    This notebook trains the following models:
 
    * Standard U-Net
