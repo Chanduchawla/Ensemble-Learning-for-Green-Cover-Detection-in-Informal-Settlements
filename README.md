@@ -87,9 +87,24 @@ https://www.kaggle.com/datasets/ayushdabra/sdsa-dse-406-606-demo-data
 3. **Train Base Models & Evaluate Ensembles.**
    The entire workflow is contained in the Jupyter notebook:
 
+   ### Running the Project in Jupyter Notebook
+
+You have two options:
+
+1. **Open `.py` directly in Jupyter Notebook**
+   - Open Jupyter Notebook and create a new notebook.
+   - Use **File → Open** to open your `.py` file (Jupyter can show and run Python scripts too).
+
+2. **Convert `.py` to `.ipynb`**
+   Run the following command in your terminal to convert the Python script into a Jupyter Notebook:
+
    ```bash
-   jupyter notebook chandu-conference-paper1.ipynb
-   ```
+   jupyter nbconvert --to notebook chandu-conference-paper1.py --output chandu-conference-paper1.ipynb
+#### 1. Run as a Python Script
+If you just want to execute the code directly, run:
+
+```bash
+python chandu-conference-paper1.py
 
    This notebook trains the following models:
 
