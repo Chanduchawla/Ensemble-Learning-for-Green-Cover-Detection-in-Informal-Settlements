@@ -88,7 +88,7 @@ https://www.kaggle.com/datasets/ayushdabra/sdsa-dse-406-606-demo-data
    The entire workflow is contained in the Jupyter notebook:
 
    ```bash
-   jupyter notebook chandu-conference-paper.ipynb
+   jupyter notebook chandu-conference-paper1.ipynb
    ```
 
    This notebook trains the following models:
