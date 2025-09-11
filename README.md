@@ -9,11 +9,13 @@ This repository contains the implementation of the research work entitled:
 
 This ensemble framework has been tested on:  
 - A custom high-resolution satellite imagery dataset of **informal settlements**.  
-- The task is to classify pixels into four categories:  
-  1. **Green Cover**  
-  2. **Open Spaces**  
-  3. **Built Structures**  
-  4. **Other Surfaces**  
+- The task is to classify pixels into six categories:  
+  1. **Slums**  
+  2. **Built-Up**  
+  3. **Roads**  
+  4. **Vegetation**
+  5. **Barren**
+  6. **Water**  
 
 ---
 
@@ -117,7 +119,7 @@ After training, the notebook applies **four ensemble methods**:
 The framework produces:
 
 * ✅ Saved model weights (`.keras` files) for each base model
-* 📈 Performance metrics (Accuracy, F1-Score, IoU, Precision, Recall)
+* 📈 Performance metrics (Accuracy, F1-Score, Precision, Recall)
 * 📉 Training history plots for each base model
 * 🖼 Visualizations of predicted segmentation masks on test images
 
